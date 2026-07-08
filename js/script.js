@@ -20,6 +20,20 @@
   onScrollHeader();
   window.addEventListener("scroll", onScrollHeader, { passive: true });
 
+  /* ---------- Scroll indicator da Hero ---------- */
+  var scrollIndicator = document.getElementById("scrollIndicator");
+  if (scrollIndicator) {
+    function onScrollIndicator() {
+      if (window.scrollY > 80) {
+        scrollIndicator.classList.add("is-hidden");
+      } else if (window.scrollY < 40) {
+        scrollIndicator.classList.remove("is-hidden");
+      }
+    }
+    onScrollIndicator();
+    window.addEventListener("scroll", onScrollIndicator, { passive: true });
+  }
+
   /* ---------- Menu mobile ---------- */
   var navToggle = document.getElementById("navToggle");
   var mainNav = document.getElementById("mainNav");
